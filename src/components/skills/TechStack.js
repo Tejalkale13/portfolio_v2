@@ -1,0 +1,85 @@
+import React from 'react';
+import styled from 'styled-components';
+import { FaAws, FaGoogle, FaDocker, FaGithub, FaGit, FaPython, FaJs, FaHtml5, FaCss3, FaTerminal } from 'react-icons/fa';
+import { SiKubernetes } from 'react-icons/si';
+import { VscAzure } from "react-icons/vsc";
+const TechStack = () => {
+  return (
+    <TechStackContainer>
+      <TechItem>
+        <TechIcon as={FaAws} />
+        <TechName>AWS</TechName>
+      </TechItem>
+      <TechItem>
+        <TechIcon as={VscAzure} />
+        <TechName>Azure</TechName>
+      </TechItem>
+      <TechItem>
+        <TechIcon as={FaGoogle} />
+        <TechName>GCP</TechName>
+      </TechItem>
+      <TechItem>
+        <TechIcon as={FaDocker} />
+        <TechName>Docker</TechName>
+      </TechItem>
+      <TechItem>
+        <TechIcon as={SiKubernetes} />
+        <TechName>Kubernetes</TechName>
+      </TechItem>
+      <TechItem>
+        <TechIcon as={FaGithub} />
+        <TechName>GitHub</TechName>
+      </TechItem>
+      <TechItem>
+        <TechIcon as={FaGit} />
+        <TechName>Git</TechName>
+      </TechItem>
+      <TechItem>
+        <TechIcon as={FaPython} />
+        <TechName>Python</TechName>
+      </TechItem>
+      <TechItem>
+        <TechIcon as={FaJs} />
+        <TechName>JavaScript</TechName>
+      </TechItem>
+      <TechItem>
+        <TechIcon as={FaHtml5} />
+        <TechName>HTML</TechName>
+      </TechItem>
+      <TechItem>
+        <TechIcon as={FaCss3} />
+        <TechName>CSS</TechName>
+      </TechItem>
+      <TechItem>
+        <TechIcon as={FaTerminal} />
+        <TechName>Shell Scripting</TechName>
+      </TechItem>
+    </TechStackContainer>
+  );
+};
+
+const TechStackContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+`;
+
+const TechItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+const TechIcon = styled.span`
+  font-size: 2rem;
+  color: ${({ theme }) => theme.text};
+`;
+
+const TechName = styled.span`
+  font-size: 1rem;
+  color: ${({ theme }) => theme.textSecondary};
+`;
+
+export default TechStack;
