@@ -14,11 +14,11 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <Greeting>Hello, I'm</Greeting>
-            <Name>Prasad Bandagale</Name>
-            <Title>DevOps & Cloud Engineer</Title>
+            <Name>Tejal Kale</Name>
+            <Title>DevOps Engineer</Title>
             <Description>
               I build and optimize cloud infrastructure and DevOps workflows,
-              specializing in AWS, Azure, Kubernetes, and CI/CD pipelines.
+              specializing in AWS, Azure, Docker, Kubernetes, and CI/CD pipelines.
             </Description>
             <ButtonGroup>
               <PrimaryButton to="/projects">View Projects</PrimaryButton>
@@ -34,7 +34,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <ProfileImageContainer>
-              <ProfileImage src="/images/profile-image.jpg" alt="Prasad Bandagale" />
+              <ProfileImage src="/images/profile-image.jpg" alt="Tejal Kale" />
             </ProfileImageContainer>
           </motion.div>
         </RightColumn>
@@ -48,11 +48,12 @@ const Hero = () => {
         >
           <TechBadge>AWS</TechBadge>
           <TechBadge>Azure</TechBadge>
-          <TechBadge>GCP</TechBadge>
-          <TechBadge>Kubernetes</TechBadge>
           <TechBadge>Docker</TechBadge>
+          <TechBadge>Kubernetes</TechBadge>
           <TechBadge>Terraform</TechBadge>
           <TechBadge>CI/CD</TechBadge>
+          <TechBadge>Jenkins</TechBadge>
+          <TechBadge>Git</TechBadge>
         </motion.div>
       </TechBadges>
     </HeroSection>
