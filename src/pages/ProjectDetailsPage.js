@@ -17,7 +17,7 @@ const ProjectDetailsPage = () => {
     if (foundProject) {
       setProject(foundProject);
       // Update document title
-      document.title = `${foundProject.title} | Prasad Bandagale Portfolio`;
+      document.title = `${foundProject.title} | Tejal Kale Portfolio`;
     }
     
     setLoading(false);
