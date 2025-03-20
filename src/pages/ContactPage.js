@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
 
 const ContactPage = () => {
   return (
@@ -18,20 +18,19 @@ const ContactPage = () => {
           </PageDescription>
         </motion.div>
       </PageHeader>
-
       <ContactInfo>
         <ContactItem>
           <ContactIcon as={FaEnvelope} />
           <ContactDetail>
             <ContactLabel>Email</ContactLabel>
-            <ContactValue>prasadsb240801@gmail.com</ContactValue>
+            <ContactValue>tejalbkale@gmail.com</ContactValue>
           </ContactDetail>
         </ContactItem>
         <ContactItem>
           <ContactIcon as={FaPhone} />
           <ContactDetail>
             <ContactLabel>Phone</ContactLabel>
-            <ContactValue>+91 8956197361</ContactValue>
+            <ContactValue>+91 7517895436</ContactValue>
           </ContactDetail>
         </ContactItem>
         <ContactItem>
@@ -39,21 +38,17 @@ const ContactPage = () => {
           <ContactDetail>
             <ContactLabel>LinkedIn</ContactLabel>
             <ContactValue>
-              <a href="https://linkedin.com/in/prasad24" target="_blank" rel="noopener noreferrer">
-                linkedin.com/in/prasad24
+              <a href="https://www.linkedin.com/in/tejal-kale-1a00081b4/" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/tejal-kale-1a00081b4
               </a>
             </ContactValue>
           </ContactDetail>
         </ContactItem>
         <ContactItem>
-          <ContactIcon as={FaGithub} />
+          <ContactIcon as={FaMapMarkerAlt} />
           <ContactDetail>
-            <ContactLabel>GitHub</ContactLabel>
-            <ContactValue>
-              <a href="https://github.com/Prasad-b-git" target="_blank" rel="noopener noreferrer">
-                github.com/Prasad-b-git
-              </a>
-            </ContactValue>
+            <ContactLabel>Address</ContactLabel>
+            <ContactValue>A 1805, Sai Paradise, Punawale - 411033</ContactValue>
           </ContactDetail>
         </ContactItem>
       </ContactInfo>
