@@ -18,6 +18,7 @@ const ProjectsPage = () => {
           <PageTitle>Projects</PageTitle>
           <PageDescription>
             Explore my latest projects, showcasing my expertise in DevOps, cloud infrastructure, and automation.
+            These projects demonstrate my skills in AWS, Docker, Kubernetes, and CI/CD pipelines.
           </PageDescription>
         </motion.div>
       </PageHeader>
