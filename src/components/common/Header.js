@@ -30,7 +30,7 @@ const Header = ({ toggleTheme, currentTheme }) => {
     <HeaderContainer isScrolled={isScrolled}>
       <NavContent>
         <LogoSection>
-          <Logo to="/">Prasad Bandagale</Logo>
+          <Logo to="/">Tejal Kale</Logo>
         </LogoSection>
         
         <MobileMenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
