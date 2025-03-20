@@ -2,7 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaDocker, FaAws, FaServer } from 'react-icons/fa';
+import { SiKubernetes, SiTerraform, SiJenkins, SiAnsible } from 'react-icons/si';
+
+const getTechIcon = (tech) => {
+  switch (tech.toLowerCase()) {
+    case 'aws':
+      return <FaAws />;
+    case 'docker':
+      return <FaDocker />;
+    case 'kubernetes':
+      return <SiKubernetes />;
+    case 'terraform':
+      return <SiTerraform />;
+    case 'jenkins':
+      return <SiJenkins />;
+    case 'ansible':
+      return <SiAnsible />;
+    default:
+      return <FaServer />;
+  }
+};
 
 const ProjectCard = ({ project }) => {
   return (
@@ -17,7 +37,7 @@ const ProjectCard = ({ project }) => {
       transition={{ duration: 0.5 }}
     >
       <CardImageWrapper>
-        <CardImage src={project.image} alt={project.title} />
+        <CardImage src={project.image || '/default-project-image.jpg'} alt={project.title} />
         <CardOverlay>
           <ViewProject to={`/projects/${project.id}`}>View Details</ViewProject>
         </CardOverlay>
@@ -29,7 +49,10 @@ const ProjectCard = ({ project }) => {
         
         <TechStack>
           {project.technologies.slice(0, 4).map((tech, index) => (
-            <TechTag key={index}>{tech}</TechTag>
+            <TechTag key={index}>
+              <TechIcon>{getTechIcon(tech)}</TechIcon>
+              {tech}
+            </TechTag>
           ))}
           {project.technologies.length > 4 && (
             <TechTagMore>+{project.technologies.length - 4}</TechTagMore>
@@ -44,7 +67,7 @@ const ProjectCard = ({ project }) => {
           )}
           {project.demoLink && (
             <CardLink href={project.demoLink} target="_blank" rel="noopener noreferrer">
-              Demo
+              <FaExternalLinkAlt /> Demo
             </CardLink>
           )}
         </CardLinks>
@@ -146,6 +169,12 @@ const TechStack = styled.div`
   margin-bottom: 1.5rem;
 `;
 
+const TechIcon = styled.span`
+  margin-right: 0.3rem;
+  display: inline-flex;
+  align-items: center;
+`;
+
 const TechTag = styled.span`
   font-size: 0.75rem;
   padding: 0.3rem 0.6rem;
@@ -153,6 +182,8 @@ const TechTag = styled.span`
   color: ${({ theme }) => theme.primaryDark};
   border-radius: 20px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
 `;
 
 const TechTagMore = styled(TechTag)`
