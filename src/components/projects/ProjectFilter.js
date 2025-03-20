@@ -8,14 +8,14 @@ const ProjectFilter = ({ projects }) => {
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [selectedCategory, setSelectedCategory] = useState('all');
 
+  // Extract unique categories from projects
+  const categories = ['all', ...new Set(projects.map(project => project.category))];
+
   useEffect(() => {
     if (selectedCategory === 'all') {
       setFilteredProjects(projects);
     } else {
-      setFilteredProjects(projects.filter(project => 
-        project.technologies.includes(selectedCategory) || 
-        project.category === selectedCategory
-      ));
+      setFilteredProjects(projects.filter(project => project.category === selectedCategory));
     }
   }, [selectedCategory, projects]);
 
@@ -26,42 +26,15 @@ const ProjectFilter = ({ projects }) => {
   return (
     <FilterContainer>
       <FilterList>
-        <FilterItem
-          onClick={() => handleCategoryClick('all')}
-          isActive={selectedCategory === 'all'}
-        >
-          All
-        </FilterItem>
-        <FilterItem
-          onClick={() => handleCategoryClick('AWS')}
-          isActive={selectedCategory === 'AWS'}
-        >
-          AWS
-        </FilterItem>
-        <FilterItem
-          onClick={() => handleCategoryClick('Docker')}
-          isActive={selectedCategory === 'Docker'}
-        >
-          Docker
-        </FilterItem>
-        <FilterItem
-          onClick={() => handleCategoryClick('Kubernetes')}
-          isActive={selectedCategory === 'Kubernetes'}
-        >
-          Kubernetes
-        </FilterItem>
-        <FilterItem
-          onClick={() => handleCategoryClick('CI/CD')}
-          isActive={selectedCategory === 'CI/CD'}
-        >
-          CI/CD
-        </FilterItem>
-        <FilterItem
-          onClick={() => handleCategoryClick('Terraform')}
-          isActive={selectedCategory === 'Terraform'}
-        >
-          Terraform
-        </FilterItem>
+        {categories.map((category) => (
+          <FilterItem
+            key={category}
+            onClick={() => handleCategoryClick(category)}
+            isActive={selectedCategory === category}
+          >
+            {category.charAt(0).toUpperCase() + category.slice(1)}
+          </FilterItem>
+        ))}
       </FilterList>
       <ProjectGrid>
         {filteredProjects.length > 0 ? (
@@ -77,7 +50,7 @@ const ProjectFilter = ({ projects }) => {
 };
 
 const FilterContainer = styled.div`
-  padding: 2rem;
+  padding: 2rem 0;
 `;
 
 const FilterList = styled.ul`
@@ -91,8 +64,8 @@ const FilterList = styled.ul`
 
 const FilterItem = styled.li`
   font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
   background-color: ${({ isActive, theme }) => isActive ? theme.primary : 'transparent'};
   color: ${({ isActive, theme }) => isActive ? '#fff' : theme.textSecondary};
   cursor: pointer;
@@ -107,7 +80,7 @@ const FilterItem = styled.li`
 
 const ProjectGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   gap: 2rem;
 `;
 
