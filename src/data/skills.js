@@ -4,6 +4,8 @@ const skills = {
     { name: "CSS", level: 80, icon: "css3" },
     { name: "JavaScript", level: 85, icon: "javascript" },
     { name: "Python", level: 80, icon: "python" },
+    { name: "C++", level: 85, icon: "cplusplus" },
+    { name: "Java", level: 80, icon: "java" },
     { name: "Shell Scripting", level: 75, icon: "terminal" }
   ],
   tools: [
@@ -13,6 +15,7 @@ const skills = {
     { name: "Jenkins", level: 80, icon: "jenkins" },
     { name: "Kubernetes", level: 75, icon: "kubernetes" },
     { name: "Terraform", level: 85, icon: "terraform" },
+    { name: "Ansible", level: 75, icon: "ansible" },
     { name: "Prometheus", level: 70, icon: "prometheus" },
     { name: "Grafana", level: 70, icon: "grafana" }
   ],
@@ -29,13 +32,15 @@ const skills = {
     { name: "Cloud Technology", level: 85, icon: "cloud" },
     { name: "Automation (DevOps)", level: 85, icon: "cogs" },
     { name: "Networking Fundamentals", level: 75, icon: "network" },
-    { name: "CI/CD Pipeline", level: 85, icon: "pipeline" }
+    { name: "CI/CD Pipeline", level: 85, icon: "pipeline" },
+    { name: "Infrastructure as Code", level: 80, icon: "code" }
   ],
   softSkills: [
     { name: "Communication", level: 85 },
     { name: "Teamwork", level: 90 },
     { name: "Problem-solving", level: 85 },
-    { name: "Creativity", level: 80 }
+    { name: "Creativity", level: 80 },
+    { name: "Leadership", level: 80 }
   ]
 };
 
