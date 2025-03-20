@@ -28,8 +28,8 @@ const getTechIcon = (tech) => {
   if (techLower.includes('terraform')) return <SiTerraform />;
   if (techLower.includes('jenkins')) return <SiJenkins />;
   if (techLower.includes('docker')) return <SiDocker />;
-  if (techLower.includes('aws')) return <SiAmazonaws />;
-  if (techLower.includes('azure')) return <SiMicrosoftazure />;
+  if (techLower.includes('aws')) return <FaAws />;
+  if (techLower.includes('azure')) return <VscAzure />;
   if (techLower.includes('google cloud') || techLower.includes('gcp')) return <SiGooglecloud />;
   if (techLower.includes('python')) return <SiPython />;
   if (techLower.includes('javascript')) return <SiJavascript />;
