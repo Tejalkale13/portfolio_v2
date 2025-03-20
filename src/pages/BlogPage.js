@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const BlogPage = () => {
   return (
@@ -27,20 +28,20 @@ const BlogPage = () => {
           <BlogPostLink to="/blog/getting-started-with-kubernetes">Read More</BlogPostLink>
         </BlogPost>
         <BlogPost>
-          <BlogPostTitle>CI/CD Pipelines with GitHub Actions </BlogPostTitle>
-	            <BlogPostDate>February 15, 2025</BlogPostDate>
+          <BlogPostTitle>CI/CD with Jenkins and Docker</BlogPostTitle>
+          <BlogPostDate>February 15, 2025</BlogPostDate>
           <BlogPostDescription>
-            Learn how to set up a CI/CD pipeline using GitHub Actions for automated testing and deployment of your applications.
+            Learn how to set up a CI/CD pipeline using Jenkins and Docker for automated testing and deployment of your applications.
           </BlogPostDescription>
-          <BlogPostLink to="/blog/ci-cd-pipelines-with-github-actions">Read More</BlogPostLink>
+          <BlogPostLink to="/blog/ci-cd-with-jenkins-and-docker">Read More</BlogPostLink>
         </BlogPost>
         <BlogPost>
-          <BlogPostTitle>Migrating from AWS to Azure</BlogPostTitle>
+          <BlogPostTitle>Infrastructure as Code with Terraform</BlogPostTitle>
           <BlogPostDate>February 10, 2025</BlogPostDate>
           <BlogPostDescription>
-            A comprehensive guide on migrating your infrastructure from AWS to Azure, covering best practices and tools to ensure a smooth transition.
+            A comprehensive guide on using Terraform for infrastructure automation, covering AWS resources, modules, and best practices.
           </BlogPostDescription>
-          <BlogPostLink to="/blog/migrating-from-aws-to-azure">Read More</BlogPostLink>
+          <BlogPostLink to="/blog/infrastructure-as-code-with-terraform">Read More</BlogPostLink>
         </BlogPost>
       </BlogContent>
     </BlogContainer>
@@ -101,7 +102,7 @@ const BlogPostDescription = styled.p`
   margin-bottom: 1.5rem;
 `;
 
-const BlogPostLink = styled.a`
+const BlogPostLink = styled(Link)`
   display: inline-block;
   padding: 0.7rem 1.2rem;
   background-color: ${({ theme }) => theme.primary};
